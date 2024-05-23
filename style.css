@@ -1,0 +1,80 @@
+.gradient-background {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    border-radius: 5%;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+img {
+    border-radius: 20%;
+    height: 685px;
+    width:412px;
+}
+
+.big{
+    font-size: 4rem;
+}
+
+.extra {
+    --s: 20px; /* the size on the corner */
+    --t: 5px; /* the thickness of the border */
+    --g: 5px; /* the gap between the border and image */
+
+    padding: calc(var(--g) + var(--t));
+    outline: var(--t) solid #e7e7e7; /* the color here */
+    outline-offset: calc(-1*var(--t));
+    -webkit-mask:
+    conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+    0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+    linear-gradient(#000 0 0) content-box;
+}
+
+.extra-2 {
+    --s: 20px; 
+    --t: 5px; 
+    --g: 5px; 
+    position: relative;
+    padding: calc(var(--g) + var(--t));
+}
+
+.extra-2::before, .extra-2::after {
+    content: '';
+    position: absolute;
+    width: var(--s);
+    height: var(--s);
+    border: var(--t) solid #e7e7e7;
+    background: transparent;
+}
+
+.extra-2::before {
+    top: 0;
+    left: 0;
+    border-width: var(--t) 0 0 var(--t);
+}
+
+.extra-2::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 var(--t) var(--t) 0;
+}
+
+p{
+    width:80%;
+}
+
+svg {
+    width:35px;
+    height:35px;
+}
